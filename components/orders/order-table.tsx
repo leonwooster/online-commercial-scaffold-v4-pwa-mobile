@@ -1,14 +1,14 @@
 import { Card } from '@/components/ui/card'
 import { currency } from '@/lib/utils'
 
-export function OrderTable({
+export function OrderTable<T extends Record<string, string | number | undefined>>({
   title,
   columns,
   rows,
 }: {
   title: string
   columns: string[]
-  rows: Array<Record<string, string | number | undefined>>
+  rows: T[]
 }) {
   return (
     <Card className="overflow-hidden">
