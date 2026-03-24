@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Suspense } from 'react'
 import { ArrowLeft, ShieldCheck } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { LoginForm } from '@/components/auth/login-form'
@@ -38,7 +39,9 @@ export default function LoginPage() {
             <h2 className="text-2xl font-semibold tracking-tight">Sign in</h2>
             <p className="mt-2 text-sm text-slate-600">Choose a role to preview the portal experience.</p>
           </div>
-          <LoginForm />
+          <Suspense fallback={<div className="text-sm text-slate-500">Loading...</div>}>
+            <LoginForm />
+          </Suspense>
         </Card>
       </div>
     </main>

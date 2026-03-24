@@ -6,15 +6,15 @@ import { Menu, X, LayoutDashboard, Boxes, ShoppingCart, CreditCard, Megaphone, B
 import type { UserRole } from '@/lib/types'
 
 const items = [
-  { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard, roles: ['admin', 'branch', 'dealer', 'supplier', 'customer'] },
-  { href: '/inventory', label: 'Inventory', icon: Boxes, roles: ['admin', 'branch', 'supplier'] },
-  { href: '/orders/factory', label: 'Factory Orders', icon: ShoppingCart, roles: ['admin', 'branch', 'supplier'] },
-  { href: '/orders/customer', label: 'Customer Orders', icon: ShoppingCart, roles: ['admin', 'branch', 'dealer', 'customer'] },
-  { href: '/finance', label: 'Finance', icon: CreditCard, roles: ['admin', 'branch'] },
-  { href: '/marketing', label: 'Marketing', icon: Megaphone, roles: ['admin', 'branch', 'dealer', 'customer'] },
-  { href: '/reports', label: 'Reports', icon: BarChart3, roles: ['admin', 'branch'] },
-  { href: '/management', label: 'Management', icon: Users, roles: ['admin'] },
-] as const
+  { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard, roles: ['admin', 'branch', 'dealer', 'supplier', 'customer'] as UserRole[] },
+  { href: '/inventory', label: 'Inventory', icon: Boxes, roles: ['admin', 'branch', 'supplier'] as UserRole[] },
+  { href: '/orders/factory', label: 'Factory Orders', icon: ShoppingCart, roles: ['admin', 'branch', 'supplier'] as UserRole[] },
+  { href: '/orders/customer', label: 'Customer Orders', icon: ShoppingCart, roles: ['admin', 'branch', 'dealer', 'customer'] as UserRole[] },
+  { href: '/finance', label: 'Finance', icon: CreditCard, roles: ['admin', 'branch'] as UserRole[] },
+  { href: '/marketing', label: 'Marketing', icon: Megaphone, roles: ['admin', 'branch', 'dealer', 'customer'] as UserRole[] },
+  { href: '/reports', label: 'Reports', icon: BarChart3, roles: ['admin', 'branch'] as UserRole[] },
+  { href: '/management', label: 'Management', icon: Users, roles: ['admin'] as UserRole[] },
+]
 
 export function MobileNav({ role }: { role: UserRole }) {
   const [open, setOpen] = useState(false)
