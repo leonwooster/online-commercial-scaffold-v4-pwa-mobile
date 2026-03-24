@@ -8,7 +8,7 @@ export function OrderTable({
 }: {
   title: string
   columns: string[]
-  rows: Array<Record<string, any>>
+  rows: Array<Record<string, string | number | undefined>>
 }) {
   return (
     <Card className="overflow-hidden">
