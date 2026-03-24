@@ -52,6 +52,7 @@ export interface FactoryOrder {
   status: 'Draft' | 'Pending Approval' | 'In Production' | 'Shipped' | 'Received'
   requestedDate: string
   expectedDate: string
+  [key: string]: string | number
 }
 
 export interface CustomerOrder {
@@ -61,6 +62,7 @@ export interface CustomerOrder {
   amount: number
   status: 'Draft' | 'Awaiting Payment' | 'Paid' | 'Packed' | 'Delivered'
   placedDate: string
+  [key: string]: string | number
 }
 
 export interface Promotion {
