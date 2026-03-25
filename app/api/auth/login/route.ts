@@ -8,7 +8,10 @@ export async function POST(request: Request) {
   const branchId = String(formData.get('branchId') ?? 'hq')
   const next = String(formData.get('next') ?? '/dashboard')
 
-  const response = NextResponse.redirect(new URL(next, request.url))
+  const url = new URL(request.url)
+  const redirectUrl = new URL(next, url.origin)
+  
+  const response = NextResponse.redirect(redirectUrl)
   response.cookies.set('ocp_user', name, { httpOnly: false, path: '/' })
   response.cookies.set('ocp_role', role, { httpOnly: false, path: '/' })
   response.cookies.set('ocp_branch', branchId, { httpOnly: false, path: '/' })
