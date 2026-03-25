@@ -28,7 +28,7 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          zip -r release.zip .next node_modules package.json package-lock.json next.config.ts public app components lib middleware.ts tsconfig.json postcss.config.js tailwind.config.ts
+          zip -r release.zip .next node_modules package.json package-lock.json next.config.ts public app components lib middleware.ts tsconfig.json postcss.config.js tailwind.config.ts .oryx_env_vars
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
