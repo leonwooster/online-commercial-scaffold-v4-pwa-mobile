@@ -8,8 +8,8 @@ export async function POST(request: Request) {
   const branchId = String(formData.get('branchId') ?? 'hq')
   const next = String(formData.get('next') ?? '/dashboard')
 
-  const url = new URL(request.url)
-  const redirectUrl = new URL(next, url.origin)
+  const requestUrl = new URL(request.url)
+  const redirectUrl = `${requestUrl.protocol}//${requestUrl.host}${next}`
   
   const response = NextResponse.redirect(redirectUrl)
   response.cookies.set('ocp_user', name, { httpOnly: false, path: '/' })

@@ -1,6 +1,8 @@
-# Online Commercial Scaffold v3
+# Online Commercial Scaffold v4
 
 Next.js App Router scaffold for a multi-branch commercial platform with mock auth, RBAC, and CRUD mockup screens.
+
+Deployed on Azure App Service with Node 22 LTS.
 
 ## Included modules
 - Dashboard overview
